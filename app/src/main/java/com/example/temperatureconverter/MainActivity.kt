@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                 // An item was selected. You can retrieve the selected item using
                 // parent.getItemAtPosition(pos)
 
+                // code that runs on pressed button
                 buttonConvert.setOnClickListener {
                     // get edit text values and convert do float
                     val insertedTemperature : String  = editTextInsertTemp.text.toString()
