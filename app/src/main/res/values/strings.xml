@@ -3,6 +3,7 @@
 
     <string name="textViewResult">Converted value</string>
     <string name="edit_text_insert_temp">Insert Temperature</string>
+    <string name="button_convert">Convert</string>
 
     <string-array name="conversion_modes">
         <item>Fahrenheit to Celsius</item>
