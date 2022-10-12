@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TemperatureConverter</string>
+
+    <string name="textViewResult">Converted value</string>
+    <string name="edit_text_insert_temp">Insert Temperature</string>
+
+    <string-array name="conversion_modes">
+        <item>Fahrenheit to Celsius</item>
+        <item>Celsius to Fahrenheit</item>
+    </string-array>
+</resources>
