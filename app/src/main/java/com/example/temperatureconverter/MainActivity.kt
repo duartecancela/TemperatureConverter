@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
-import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,40 +33,34 @@ class MainActivity : AppCompatActivity() {
             spinner.adapter = adapter
         }
 
-
+        // get button from XML
         val buttonConvert = findViewById<Button>(R.id.buttonConvert)
 
         spinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
+
             override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
                 // An item was selected. You can retrieve the selected item using
                 // parent.getItemAtPosition(pos)
 
-                val insertedTemperature : String  = editTextInsertTemp.text.toString()
-                val insertedTemperatureFloat : Float = insertedTemperature.toFloat()
-                var temperatureResult: Double
-
                 buttonConvert.setOnClickListener {
+                    // get edit text values and convert do float
+                    val insertedTemperature : String  = editTextInsertTemp.text.toString()
+                    val insertedTemperatureFloat : Float = insertedTemperature.toFloat()
+                    var temperatureResult: Double
 
                     if(parent.getItemAtPosition(pos).toString() == "Fahrenheit to Celsius"){
-
-                        temperatureResult = insertedTemperatureFloat - 32.0 / 1.80
-
+                        temperatureResult = (insertedTemperatureFloat - 32.0) / 1.8
                         textViewConverted.text = temperatureResult.toString()
-
-                        Toast.makeText(this@MainActivity, "F to C",
-                            Toast.LENGTH_SHORT).show()
-
+//                        Toast.makeText(this@MainActivity, "F to C",
+//                            Toast.LENGTH_SHORT).show()
                     }
 
                     if(parent.getItemAtPosition(pos).toString() == "Celsius to Fahrenheit"){
-
-                        temperatureResult = (insertedTemperatureFloat * 1.8) / 32.0
-
+                        temperatureResult = (insertedTemperatureFloat * 1.8) + 32.0
                         textViewConverted.text = temperatureResult.toString()
-
-                        Toast.makeText(this@MainActivity, "C to F",
-                            Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(this@MainActivity, "C to F",
+//                            Toast.LENGTH_SHORT).show()
                     }
                 }
 
